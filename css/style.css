@@ -1,0 +1,165 @@
+/*global style */
+*{
+    margin: 0;
+    color: #ffff;
+    font-family: sans-serif;
+    
+}
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+.container{
+    background-image: url(https://taleek.com/img/bg-layer.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: cadetblue;
+    height: 800px;
+    position: relative;
+}
+
+/*header*/
+header{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.logo{
+    margin-top: 10px;
+    
+}
+p{
+    font-size: 22px;
+    display: inline-block;
+    position: relative;
+    top: -15px;
+}
+a{
+    text-decoration: none;
+    font-size: 22px;
+    margin:15px;opacity: 0.5;
+    transition: 0.3s all;
+}
+a:hover{
+  opacity: 1;
+  /*border-bottom:1px solid white */;
+}
+nav{
+    margin-top: 25px;
+}
+/*middle*/
+.middle
+{
+ height: 400px;
+ position: relative;
+
+
+}
+h1{
+    font-size: 70px;
+    text-align: center;
+    animation: mymove 10s infinite linear;
+}
+@keyframes mymove{
+    0%{letter-spacing: 5px;}
+    50%{letter-spacing: 15px;}
+    100%{letter-spacing: 5px;}
+}
+.main-img{
+    width: 700px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    animation: image 10s infinite;
+    
+}
+@keyframes image {
+    0%,100%{transform: translate(0,0);}
+    50% {
+      transform: translateX(60px);
+      transform: translatex(-60px);
+    }
+  }
+.left{ 
+    position: absolute;
+    top:35%;
+    left: 15%;
+   
+}
+button{
+    all: unset;
+    border-radius: 12px;
+    background-color: goldenrod;
+    font-size: 25px;
+    display: block;
+    margin: 17px 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+    animation: buttonani 10s infinite;
+    
+
+}
+button:hover{
+    padding: 8px 14px;
+    font-size: 20px;
+    border: 2px solid white;
+    background-color: transparent;
+}
+
+@keyframes buttonani {
+    0%,
+    100% {
+      border-radius: 15px;
+    }
+  
+    50% {
+      border-radius: 3px;
+    }
+  }
+
+@media (max-width: 900px) {
+    .left {
+      
+      text-align: center;
+      position: static;
+    }
+  
+    button{
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+/*wave*/
+.wave{
+    height: 143px;                /*or background position:cover    or height wave=height img*/
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-image: url(/images/wave.png);
+    animation: waveee 350s infinite;
+}
+@keyframes waveee{
+    0%,100%{background-position: 10000px;}
+    50%{background-position: 500px;}
+}
+.wave::before{
+    content: "";
+    height: 143px;
+    width: 100%;
+    background-image: url(/images/wave.png);
+    animation: waverev 250s infinite;
+    position: absolute;
+    bottom: 0;
+    opacity: 0.5;
+}
+@keyframes waverev{
+    0%,100%{background-position: -10000px;}
+    50%{background-position: -500px;}
+}
